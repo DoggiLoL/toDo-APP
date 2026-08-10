@@ -1,6 +1,8 @@
 const taskList = document.querySelector("#task-list");
 const addBtn = document.querySelector("#add-btn");
 const taskInput = document.querySelector("#task-input");
+const leftTasks = document.querySelector("#left-tasks");
+const clearBtn = document.querySelector("#clear-btn");
 
 addBtn.addEventListener("click", () => {
   if (taskInput.value.trim() === "") {
@@ -8,15 +10,18 @@ addBtn.addEventListener("click", () => {
     return;
   }
   addNewLi(taskInput.value);
+  updateCouneter();
 });
 
 taskList.addEventListener("click", (e) => {
   if (e.target.matches(".checkbox")) {
     e.target.closest(".task").classList.toggle("done");
+    updateCouneter();
     return;
   }
   if (e.target.matches(".task-text")) {
     e.target.closest(".task").classList.toggle("done");
+    updateCouneter();
     return;
   }
   if (e.target.matches(".task")) {
@@ -25,7 +30,15 @@ taskList.addEventListener("click", (e) => {
   if (e.target.matches(".delete-btn")) {
     e.target.parentElement.remove();
   }
+
+  updateCouneter();
 });
+
+clearBtn.addEventListener("click", () => {
+  deleteDone();
+});
+
+// Functions
 
 function addNewLi(value) {
   const li = document.createElement("li");
@@ -47,4 +60,17 @@ function addNewLi(value) {
   li.appendChild(span);
   li.appendChild(btn);
   taskList.appendChild(li);
+}
+
+function updateCouneter() {
+  leftTasks.textContent = taskList.querySelectorAll(".task:not(.done)").length;
+}
+
+function deleteDone() {
+  const doneSelection = document.querySelectorAll(".task.done");
+
+  console.log(doneSelection);
+  doneSelection.forEach((element) => {
+    element.remove();
+  });
 }
