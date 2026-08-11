@@ -5,9 +5,17 @@ const addBtn = document.querySelector("#add-btn");
 const taskInput = document.querySelector("#task-input");
 const leftTasks = document.querySelector("#left-tasks");
 const clearBtn = document.querySelector("#clear-btn");
+const settingsModal = document.querySelector("#settings-modal");
+// settings
+const settingsBtn = document.querySelector("#settings-btn");
+const closeSettingsBtn = document.querySelector("#close-settings-btn");
+const applyBtn = document.querySelector("#apply-btn");
+const bgInput = document.querySelector("#bg-input");
 
+loadBg();
 loadTasks();
 
+//main page - eventListeners
 addBtn.addEventListener("click", () => {
   if (taskInput.value.trim() === "") {
     return;
@@ -45,6 +53,30 @@ clearBtn.addEventListener("click", () => {
   deleteDone();
   saveTask();
   updateCounter();
+});
+
+settingsBtn.addEventListener("click", () => {
+  settingsModal.showModal();
+});
+
+//settings eventListeners
+closeSettingsBtn.addEventListener("click", () => {
+  settingsModal.close();
+});
+
+applyBtn.addEventListener("click", () => {
+  const url = bgInput.value.trim();
+  if (!url) return;
+
+  document.body.style.backgroundImage = `url(${url})`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "centerr";
+  localStorage.setItem("background", url);
+  settingsModal.close();
+});
+
+settingsModal.addEventListener("click", (e) => {
+  if (e.target === settingsModal) settingsModal.close();
 });
 
 // Functions - for main page
@@ -100,4 +132,13 @@ function loadTasks() {
     }
   });
   updateCounter();
+}
+
+// Functions - for settings
+function loadBg() {
+  const savedBg = localStorage.getItem("background");
+  if (savedBg) {
+    document.body.style.backgroundImage = `url(${savedBg})`;
+    bgInput.value = savedBg;
+  }
 }

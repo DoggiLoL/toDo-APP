@@ -11,22 +11,43 @@
       <div class="header">
         <p>Glaze</p>
         <div class="btn-container">
-          <button class="btn" id="setting-btn">⚙</button>
+          <button class="btn" id="settings-btn">⚙</button>
           <button class="btn" id="about-btn">ℹ</button>
         </div>
       </div>
 
       <div class="main">
         <div class="input-container">
-          <input id="task-input" type="text" />
+          <input class="text-input" id="task-input" type="text" />
           <button class="btn" id="add-btn">+</button>
         </div>
         <ul id="task-list"></ul>
+        <!-- место под settings -->
+        <dialog id="settings-modal">
+          <div class="container dialog-content">
+            <div class="header">
+              <p>Settings</p>
+              <button class="btn" id="close-settings-btn">&times;</button>
+            </div>
+            <div class="input-container">
+              <input
+                placeholder="http//:"
+                class="text-input"
+                id="bg-input"
+                type="text"
+              />
+              <button class="btn text-btn" id="apply-btn">Apply</button>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog id="about-modal"></dialog>
+        <!-- место под about -->
       </div>
 
       <div class="footer">
         <p><span id="left-tasks">0</span> tasks left</p>
-        <button class="btn" id="clear-btn">Clear done</button>
+        <button class="btn text-btn" id="clear-btn">Clear done</button>
       </div>
     </div>
     <script src="js/scripts.js"></script>
