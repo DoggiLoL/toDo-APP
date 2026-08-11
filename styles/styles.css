@@ -143,8 +143,8 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  background-color: #16213e;
-  border: 1px solid #0f3460;
+  /* background-color: #16213e; */
+  border: 1px solid #e94560;
   border-radius: 10px;
   padding: 14px 15px;
   cursor: pointer;
@@ -242,6 +242,7 @@ body {
   }
 
   .container {
+    width: 100%;
     min-height: auto;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -251,6 +252,12 @@ body {
     width: 30px;
     height: 30px;
     font-size: 14px;
+  }
+
+  .text-btn {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
   }
 
   #add-btn {
