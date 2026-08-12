@@ -4,8 +4,8 @@ const FILES_TO_CACHE = [
   "./index.html",
   "./styles/styles.css",
   "./js/scripts.js",
-  "./img/logo/icon192.png",
-  "./img/logo/icon512.png",
+  "./img/logo/glaze_logo_app.png",
+  "./img/logo/glaze_logo_web_store.png",
 ];
 
 self.addEventListener("install", (e) => {
