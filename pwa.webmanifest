@@ -8,13 +8,13 @@
   "theme_color": "#e94560",
   "icons": [
     {
-      "src": "img/logo/glaze_logo192.png",
+      "src": "./img/logo/glaze_logo192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "img/logo/glaze_logo512.png",
+      "src": "./img/logo/glaze_logo512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
