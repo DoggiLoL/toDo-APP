@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glaze</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="manifest" href="pwa.webmanifest" />
+    <meta name="theme-color" content="#e94560" />
   </head>
   <body>
     <div class="container">
@@ -65,5 +67,10 @@
       </div>
     </div>
     <script src="js/scripts.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js");
+      }
+    </script>
   </body>
 </html>

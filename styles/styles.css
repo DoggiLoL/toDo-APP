@@ -28,6 +28,13 @@ body {
   min-height: 100dvh;
 }
 
+body.extension {
+  width: 380px;
+  min-height: 500px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
 .container {
   width: 100%;
   max-width: 380px;

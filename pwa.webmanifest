@@ -1,0 +1,21 @@
+{
+  "name": "Glaze",
+  "short_name": "Glaze",
+  "description": "A minimal todo app with glassmorphism design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#e94560",
+  "icons": [
+    {
+      "src": "img/logo/glaze_logo_app.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo/glaze_logo_web_store.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

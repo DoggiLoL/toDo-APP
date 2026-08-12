@@ -14,6 +14,11 @@ const applyBtn = document.querySelector("#apply-btn");
 const bgInput = document.querySelector("#bg-input");
 // about
 aboutBtn = document.querySelector("#about-btn");
+
+if (window.location.protocol === "chrome-extension:") {
+  document.body.classList.add("extension");
+}
+
 loadBg();
 loadTasks();
 
