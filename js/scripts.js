@@ -6,12 +6,14 @@ const taskInput = document.querySelector("#task-input");
 const leftTasks = document.querySelector("#left-tasks");
 const clearBtn = document.querySelector("#clear-btn");
 const settingsModal = document.querySelector("#settings-modal");
+const aboutModal = document.querySelector("#about-modal");
 // settings
 const settingsBtn = document.querySelector("#settings-btn");
 const closeSettingsBtn = document.querySelector("#close-settings-btn");
 const applyBtn = document.querySelector("#apply-btn");
 const bgInput = document.querySelector("#bg-input");
-
+// about
+aboutBtn = document.querySelector("#about-btn");
 loadBg();
 loadTasks();
 
@@ -59,7 +61,7 @@ settingsBtn.addEventListener("click", () => {
   settingsModal.showModal();
 });
 
-//settings eventListeners
+// settings eventListeners
 closeSettingsBtn.addEventListener("click", () => {
   settingsModal.close();
 });
@@ -77,6 +79,15 @@ applyBtn.addEventListener("click", () => {
 
 settingsModal.addEventListener("click", (e) => {
   if (e.target === settingsModal) settingsModal.close();
+});
+
+// about eventListeners
+aboutBtn.addEventListener("click", () => {
+  aboutModal.showModal();
+});
+
+aboutModal.addEventListener("click", (e) => {
+  if (e.target === aboutModal) aboutModal.close();
 });
 
 // Functions - for main page
